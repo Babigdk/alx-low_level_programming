@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Entry point
@@ -9,7 +10,7 @@ int main(void)
 {
 	char lett;
 
-	for(lett = 'a' lett <= 'z'; lett++)
+	for(lett = 'a'; lett <= 'z'; lett++)
 	{
 		putchar(lett);
 
