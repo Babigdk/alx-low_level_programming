@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 /**
  * main - Entry point
@@ -9,30 +7,14 @@
  */
 int main(void)
 {
-	int d, p, q;
+	char lett;
 
-	for(d = '0'; d < '9'; d++)
+	for(lett = 'a' lett <= 'z'; lett++)
 	{
-		for(p = d + 1; p <= '9'; q++)
-		{
-			for(q = p + 1; q <= '9'; q++)
-			{
-				if ((p != d) != q)
-				{
-					putchar(d);
-					putchar(p);
-					putchar(q);
+		putchar(lett);
 
-					if(d == '7' && p == '8')
-						continue;
-
-					putchar(',');
-					putchar(' ');
-				}
-			}
-		}
+		putchar("\n");
 	}
-	putchar('\n');
 
 	return (0);
-}
+}	
