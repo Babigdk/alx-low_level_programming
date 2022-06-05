@@ -20,7 +20,7 @@ int main(void)
 				{
 					putchar(a);
 					putchar(b);
-					putchar(q);
+					putchar(c);
 
 					if ( a == '7' && b == '8')
 						continue;
