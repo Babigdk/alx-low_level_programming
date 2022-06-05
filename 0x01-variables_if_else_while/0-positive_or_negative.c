@@ -3,12 +3,11 @@
 #include <time.h>
 
 /*
- * Main - print a random number and states wheather
- * it is a positive, nenative or zero.
+ * main - Entry point
  *
- * Return: Always 0 (sucess)
+ * Return: Always 0 (success)
  */
-int main(void)
+int main(void) 
 {
 	int n;
 
