@@ -3,11 +3,10 @@
 #include <time.h>
 
 /*
- * main - Entry point
+ * main - print a random number and states wheather
+ * it is a positive, nenative or zero.
  *
  * Return: Always 0 (sucess)
-
- * betty style doc for function main goes there
  */
 int main(void)
 {
