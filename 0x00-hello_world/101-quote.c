@@ -1,5 +1,5 @@
 #include <stdio.h>
-#incluse <stdlib.h>
+#include <stdlib.h>
 /**
  * main -Etry pont
  *
