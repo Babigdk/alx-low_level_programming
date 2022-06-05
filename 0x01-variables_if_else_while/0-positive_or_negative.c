@@ -8,6 +8,7 @@
  *
  * Return: Always 0 (sucess)
  */
+/* main - print negative or positive values or zero */
 int main(void)
 {
 	int n;
