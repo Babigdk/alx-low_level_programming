@@ -19,12 +19,13 @@ int main(void)
 		fib2 = sum;
 
 		if (counter == 49)
-		{
+
 			printf("\n");
-		}
+
 		else
-		{
+
 			printf(", ");
-		}
+
 	}
+	return (0);
 }
