@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_sign - check for sign 
+ * print_sign - check for sign
  * @n: checked for sign
  *
  * Return: Always 1 (success)
  */
 int print_sign(int n)
 {
-	if (n >0)
+	if (n > 0)
 	{
 		_putchar('+');
 		return (1);
