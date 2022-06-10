@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * print_triangle - Entry point
- *
- * Description: print triangle
+ * print_triangle - Entry point to print triangle
  * @size: size of triangle
- * Return: void
+ * Return: Always 0
  */
 void print_triangle(int size)
 {
@@ -17,17 +15,15 @@ void print_triangle(int size)
 		{
 			for (j = 0; j < size; j++)
 			{
-				if (j = 0; j < size; j++)
-				{
-					if (j < n)
-						_putchar(' ');
-					else
-						_putchar('#');
-				}
-				n--;
-				_putchar('\n');
+				if (j < n)
+					_putchar(' ');
+				else
+					_putchar('#');
 			}
-		}
-		else
+			n--;
 			_putchar('\n');
+		}
+	}
+	else
+		_putchar('\n');
 }
