@@ -1,9 +1,8 @@
 #include "main.h"
-
 void print_integer(int m);
 
 /**
- * print_number - function to return an integer
+ * print_number - a function to return an integer
  * @n: input
  * Return: 0
  */
@@ -23,8 +22,9 @@ void print_number(int n)
 /**
  * print_integer - a function to be call
  * @m: input unsigned
- * Return: 0
+ * Return: Always 0
  */
+
 void print_integer(int m)
 {
 	int i = 1000000000;
