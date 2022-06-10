@@ -41,8 +41,8 @@ void print_number(int n)
 	j = power;
 	while (j >= 1)
 	{
-		number = (temp / j) % 10;
-		_putchar(number + '0');
+		numchar = (temp / j) % 10;
+		_putchar(numchar + '0');
 		j = j / 10;
 	}
 }
