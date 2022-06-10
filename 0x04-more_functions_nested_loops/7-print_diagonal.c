@@ -2,7 +2,7 @@
 
 /**
  * print_diagonal - function to draw diagonal
- * @a: input value
+ * @n: input value
  * Return: Always 0
  */
 void print_diagonal(int n)
