@@ -1,13 +1,12 @@
 #include "main.h"
 
 /*
- * reset_to_98 - funxtion that takes a pointer to an int as parameter and
- * updates the value it points to to 98
- * @n: pointer value
+ * reset_to_98 - set a pointer to 98
+ * @n: pointer input
  *
- * Description: using pointer as parameter to update the value it points 98
+ * Description: setting the pointer to 98
  *
- * Return: value 98
+ * Return: void
  */
 
 void reset_to_98(int *n)
