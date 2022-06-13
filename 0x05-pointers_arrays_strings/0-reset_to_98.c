@@ -2,7 +2,7 @@
 
 /*
  * reset_to_98 - set a pointer to 98
- * @n: pointer input
+ * @*n: pointer input
  *
  * Description: using pointer as parameter to change value to 98
  *
