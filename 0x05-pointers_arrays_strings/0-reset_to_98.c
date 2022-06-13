@@ -2,11 +2,11 @@
 
 /*
  * reset_to_98 - function with one int argument
- * @n: parameter of type int
+ * @n: arg of type int
  *
  * Description: Using pointer as parameter to update value it points to 98
  *
- * Return: void
+ * Return: void 
  */
 void reset_to_98(int *n)
 {
