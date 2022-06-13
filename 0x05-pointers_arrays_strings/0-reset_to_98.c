@@ -6,7 +6,7 @@
  *
  * Description: Using pointer as parameter to update value it points to 98
  *
- * Return: value
+ * Return: void
  */
 void reset_to_98(int *n)
 {
