@@ -37,6 +37,6 @@ int main(void)
 		}
 	}
 	p[i] = '\0';
-	printf(%s", p);
+	printf("%s", p);
 	return (0);
 }
