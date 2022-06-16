@@ -9,15 +9,14 @@
  */
 void reserve_array(int *a, int n)
 {
-	int i = 0, t;
+	int tmp;
+	int *ptr = a;
 
-	n = n - 1;
-	while (i < n)
+	while (&a[n--] > ptr)
 	{
-		t = *(a + i);
-		*(a + i) = *(a + n);
-		*(a + n) = t;
-		i++;
-		n--;
+		tmp = *ptr;
+		*ptr = a[n];
+		a[n] = tmp;
+		ptr++;
 	}
 }
