@@ -16,11 +16,8 @@ char *_strcat(char * dest, char *scr)
 	b = 0;
 
 	while (*(dest + a))
-	{
 		a++;
-	}
-
-	while (*(dest + a) = *(src + b))
+	while ((*(dest + a) = *(src + b)))
 	{
 		a++;
 		b++;
