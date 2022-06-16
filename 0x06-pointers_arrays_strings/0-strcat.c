@@ -7,7 +7,7 @@
  *
  * Return: Always 0
  */
-char *_strcat(char * dest char *scr)
+char *_strcat(char * dest, char *scr)
 {
 	int a = 0;
 	int b = 0;
