@@ -9,13 +9,14 @@
  */
 void reserve_array(int *a, int n)
 {
-	int result[500];
-	int i;
-	n--;
+	int tmp;
+	int *ptr = a;
 
-	for (i = 0; i <= n; i++)
-		result[i] = a[i];
-	for (i = 0; i < n; i++)
-		a[i] = result[n - i];
-
+	while (&a[n--] > ptr)
+	{
+		tmp = *ptr;
+		*ptr = a[n];
+		a[n] = tmp;
+		ptr++;
+	}
 }
