@@ -5,7 +5,7 @@
  * @dest: firt arg
  * @src: second arg
  *
- * Return: void
+ * Return: Always 0
  */
 char *_strcat(char * dest char *scr)
 {
