@@ -11,7 +11,7 @@ void reserve_array(int *a, int n)
 {
 	int *p, i, aux, k;
 
-	p = a;
+	*p = a;
 
 	for (i = 1; i < n; i++)
 	{
