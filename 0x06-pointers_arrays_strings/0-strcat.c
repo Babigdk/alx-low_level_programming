@@ -9,19 +9,12 @@
  */
 char *_strcat(char * dest, char *src)
 {
-	int i;
-	int j;
+	char *ptr = dest;
 
-	i = 0;
-	j = 0;
-
-	while (*(dest + i))
-		i++;
-	while ((*(dest + i) = *(src + j)))
-	{
-		i++;
-		j++;
-	}
-
+	while (*ptr != 0)
+		ptr++;
+	while (*src != 0)
+		*ptr++ = *src++;
+	*ptr = 0;
 	return (dest);
 }
