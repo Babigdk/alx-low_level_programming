@@ -2,8 +2,9 @@
 
 /**
  * reverse_array - reverse array element
- * @a: ist arg
- * @n: length
+ *
+ * @a: integer array
+ * @n: number of array elem of type int
  *
  * Return: void
  */
