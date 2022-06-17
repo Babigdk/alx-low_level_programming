@@ -1,29 +1,26 @@
 #include "main.h"
 /**
  * leet - convert a character
- * @a: input
+ * @n: input
  *
  * Return: void
  */
-char *leet(char *a)
+char *leet(char *n)
 {
-	char *sptr = a;
-	int index = 0;
+	int i, x;
+	int find[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	int replacer[] = {'4', '3', '0', '7', '1'};
 
-	char translation[][10] = { {'a', 'A', 't', 'T', 'o', 'O', 'e', 'E', 'l', 'L'}
-		                  , { '4', '4', '7', '7', '0', '0', '3', '1',, '1'} };
-	while (*sptr != 0)
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		if (*sptr == 'a' || *sptr == 'A' || *sptr == 'e' || *sptr == 'E'
-			|| *sptr == 'o' || *sptr == 'O' || *sptr == 't' || *sptr == 'T'
-			|| *sptr == 'l' || *sptr == 'L')
+		for (x = 0; x <= 9; x++)
 		{
-			index = 0;
-			while (translation[0][index] != *sptr)
-				index++;
-			*sptr = translation[1][index];
+			if (n[i] == find[x])
+			{
+				n[i] = replacer[x / 2];
+				x = 9;
+			}
 		}
-		sptr++;
 	}
-	return (a);
+	return (n);
 }
