@@ -2,26 +2,31 @@
 /**
  * rot13 - encode a string
  *
- * @a: input to encode
+ * @n: input to encode
  *
  * Return: encoded string
  */
-char *rot13(char *a)
+char *rot13(char *n)
 {
-	char *sptr = a;
-	int index;
-	char trans[2][54] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-		"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"}
-	while (*sptr != 0)
+	int x, rot_c, =13, i = 0;
+	char toswap[] = {'A', 'N', 'a', 'n', 'B', 'O', 'b', 'o', 'C', 'P',
+		'c', 'p', 'D', 'Q', 'd', 'q', 'E', 'R', 'e', 'r', 'F', 'S', 'f',
+		'J', 'W', 'j', 'w', 'K', 'X', 'k', 'x', 'L', 'Y', 'l', 'y', 'M',
+		'Z', 'm, 'z'};
+
+	while (n[i] != '\0')
 	{
-		if ((*sptr >= 'a' && *sptr <= 'z') || (*sptr >= 'A' && *sptr <= 'Z'))
+		for (x = 0; x <= 51; x++)
 		{
-			index = 0;
-			while (*sptr != trans[0][index])
-				index++;
-			*sptr = trans[1][index];
+			if (n[i] == toswap[x])
+			{
+				n[i] = n[i] + rot_c;
+				x = 51;
+			}
+			rot_c = rot_c * -1;
 		}
-		sptr++;
+		i++;
 	}
-	return (a);
+	return (n);
+
 }
