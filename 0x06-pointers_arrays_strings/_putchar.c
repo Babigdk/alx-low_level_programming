@@ -6,6 +6,7 @@
  * @c: input char
  *
  * Return: 1
+ * on error -1
  */
 int _putchar(char c)
 {
