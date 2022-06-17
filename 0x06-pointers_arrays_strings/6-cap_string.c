@@ -1,7 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * *cap_string - function to capitalise
@@ -11,22 +8,28 @@
  */
 char *cap_string(char *a)
 {
-	int newword = 1;
-	char *ptr = a;
+	int i, x;
+	int cap = 32;
+	int separators[] = {',', ';', '.', '?', '"',
+		'(', ')', '{', '}', ' ', '\n', '\t'};
 
-	while (*ptr != 0)
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		if (newword == 1)
+		if (n[i] >= 'a' && n[i] <= 'z')
 		{
-			newword = 0;
-			if (*ptr < 'z' && *ptr > 'a')
-				*ptr -= 32;
+			n[i] = n[i] - cap;
 		}
-		if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n' || *ptr == ','
-		    || *ptr == ';' || *ptr == '.' || *ptr == '!' || *ptr == '"'
-		    || *ptr == '(' || *ptr == ')' || *ptr == '{' || *ptr == '}')
-				newword = 1;
-		ptr++;
+
+		cap = 0;
+
+		for (x = 0; x <= 12; x++)
+		{
+			if (n[i] == separators[x])
+			{
+				x = 12;
+				cap = 32;
+			}
+		}
 	}
-	return (a);
+	return (n);
 }
