@@ -2,32 +2,41 @@
 /**
  * rot13 - encode a string
  *
- * @n: input to encode
+ * @str: input to encode
  *
  * Return: encoded string
  */
-char *rot13(char *n)
+char *rot13(char *str)
 {
-	int x, rot_c, = 13, i = 0;
-	char toswap[] = {'A', 'N', 'a', 'n', 'B', 'O', 'b', 'o', 'C', 'P',
-		'c', 'p', 'D', 'Q', 'd', 'q', 'E', 'R', 'e', 'r', 'F', 'S', 'f',
-		's', 'G', 'T', 'g', 't', 'H', 'U', 'h, 'u', 'I', 'V', 'i', 'v',
-		'J', 'W', 'j', 'w', 'K', 'X', 'k', 'x', 'L', 'Y', 'l', 'y', 'M',
-		'Z', 'm', 'z'};
+	int index1 = 0, index2;
+	char alphabets[] = {'A', 'B', 'C', 'D', 'E', 'F',
+		         'G', 'H', 'I','J', 'K', 'L', 'M','N', 
+		         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+			 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
+			 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+			 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+			 'u', 'v', 'w', 'x', 'y','z'};
+	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R','S', 'T', 'U', 
+		             'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C',
+			     'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+			     'L', 'M', 'n', 'o', 'p', 'q', 'r', 's',
+			     't', 'u', 'v', 'w', 'x', 'y', 'z', 'a',
+			     'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+			     'j', 'k', 'l', 'm'};
 
-	while (n[i] != '\0')
+
+	while (str[index1])
 	{
-		for (x = 0; x <= 51; x++)
+		for (index2 = 0; index2 < 52; index2++)
 		{
-			if (n[i] == toswap[x])
+			if (str[index1] == alphabets[index2])
 			{
-				n[i] = n[i] + rot_c;
-				x = 51;
+				str[index1] = rot13key[index2];
+				break;
 			}
-			rot_c = rot_c * -1;
 		}
-		i++;
+		index1++;
 	}
-	return (n);
+	return (str);
 
 }
