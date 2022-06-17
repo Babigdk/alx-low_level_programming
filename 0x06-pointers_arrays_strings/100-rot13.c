@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * rot13 - encode a string
  *
@@ -10,13 +11,13 @@ char *rot13(char *str)
 {
 	int index1 = 0, index2;
 	char alphabets[] = {'A', 'B', 'C', 'D', 'E', 'F',
-		         'G', 'H', 'I','J', 'K', 'L', 'M','N', 
+		         'G', 'H', 'I','J', 'K', 'L', 'M','N',
 		         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
 			 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
 			 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 			 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
 			 'u', 'v', 'w', 'x', 'y','z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R','S', 'T', 'U', 
+	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R','S', 'T', 'U',
 		             'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C',
 			     'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 			     'L', 'M', 'n', 'o', 'p', 'q', 'r', 's',
