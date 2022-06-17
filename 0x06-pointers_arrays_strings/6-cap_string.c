@@ -20,8 +20,8 @@ char *cap_string(char *a)
 				*ptr -= 32;
 		}
 		if (*ptr == ' ' || *ptr == '\t' || *ptr == '\n' || *ptr == ','
-			|| *ptr == ';' || *ptr == '.' || *ptr == '!' || *ptr == '"'
-			|| *ptr == '(' || *ptr == ')' || *ptr == '{' || *ptr == '}')
+		    || *ptr == ';' || *ptr == '.' || *ptr == '!' || *ptr == '"'
+		    || *ptr == '(' || *ptr == ')' || *ptr == '{' || *ptr == '}')
 				newword = 1;
 		ptr++;
 	}
