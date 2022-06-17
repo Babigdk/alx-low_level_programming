@@ -1,4 +1,7 @@
 #include "main.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * *cap_string - function to capitalise
