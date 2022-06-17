@@ -2,7 +2,7 @@
 
 /**
  * *cap_string - function to capitalise
- * @a: character to caps
+ * @n: character to caps
  *
  * Return: string
  */
