@@ -20,4 +20,4 @@ int sqrt1(int a, int b)
 }
 int _sqrt_recursion(int n)
 {
-	return (sqrt1(n, 1);
+	return (sqrt1(n, 1));
