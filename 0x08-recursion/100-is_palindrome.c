@@ -33,7 +33,7 @@ int palin2(int l, int r, char *p)
  */
 int is_palindrome(char *s)
 {
-	int i
+	int i;
 
 	i = palin1(s) - 1;
 	return (palin2(0, i, s));
