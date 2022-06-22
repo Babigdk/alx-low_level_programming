@@ -1,8 +1,7 @@
 #include "main.h"
 /**
  * palin1 - length of number
- * @a: string 
- * @l: lenght
+ * @a: string
  * Return: 1
  */
 int palin1(char *a)
