@@ -5,25 +5,26 @@
  * @l: lenght
  * Return: 1
  */
-int palin1(char *a, int l)
+int palin1(char *a)
 {
-	if (*a == 0)
-		return (l -1);
-	return (palin1(a + 1, l + 1));
+	if (*a == '\0')
+		return (0);
+	return (1 + palin1(a + 1));
 }
 /**
  * palin2 - compare strings
- * @a: string
+ * @r: string
+ * @p: p
  * @l: lenght
  * Return: 1
  */
-int palin2(char *a, int l)
+int palin2(int l, int r, char *p)
 {
-	if (*a != *(a + 1))
-		return (0);
-	else if (*a == 0)
+	if (l >= r)
 		return (1);
-	return (palin2(a + 1, l - 2));
+	else if (p[l] != p[r])
+		return (0);
+	return (palin2(l + 1, r - 1, p));
 }
 /**
  * is_palindrome - checker
@@ -32,8 +33,8 @@ int palin2(char *a, int l)
  */
 int is_palindrome(char *s)
 {
-	int l;
+	int i
 
-	l = palin1(s, 0);
-	return (palin2(s, l));
+	i = palin1(s) - 1;
+	return (palin2(0, i, s));
 }
