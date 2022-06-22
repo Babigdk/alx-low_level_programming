@@ -5,7 +5,7 @@
  * @l: lenght
  * Return: 1
  */
-in palin1(char *a, int l)
+int palin1(char *a, int l)
 {
 	if (*a == 0)
 		return (l -1);
