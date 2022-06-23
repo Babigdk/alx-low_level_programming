@@ -81,16 +81,16 @@ int find_next_c(char **s2, char *as2)
  *
  * Return: 1
  */
-int find_after_sc(char **s1, char *as1, char s2)
+int find_after_sc(char **s3, char *as1, char s2)
 {
 	if (*as1 == '\0')
 		return (0);
 	if (*as1 == s2)
 	{
-		*s1 = as1;
+		*s3 = as1;
 		return (1);
 	}
-	if (find_after_sc(s1, as1 + 1, s2) == 0)
+	if (find_after_sc(s3, as1 + 1, s2) == 0)
 		return (0);
 	return (1);
 }
