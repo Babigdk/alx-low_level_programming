@@ -94,4 +94,3 @@ int find_after_sc(char **s1, char *as1, char s2)
 		return (0);
 	return (1);
 }
-	
