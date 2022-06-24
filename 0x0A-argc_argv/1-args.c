@@ -5,13 +5,8 @@
  * #argv: second para
  * Return: 0
  */
-int main(int argc, char *argv[] __attribute__ ((unused)))
+int main(int argc, __attribute__((unused)) char *argv[])
 {
-	int i;
-	while (i < argc)
-	{
-		i++;
-	}
-	printf("%d\n", --1);
+	printf("%d\n", argc - 1);
 	return (0);
 }
