@@ -16,6 +16,7 @@ int _strlen(char *s)
 	}
 	return (a);
 }
+
 /**
  * _strdup - creationg new array containing a copy of a given string
  * @str: pointer
@@ -27,7 +28,7 @@ char *_strdup(char *str)
 	int size;
 	int x;
 
-	if(str == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
