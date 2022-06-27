@@ -35,5 +35,5 @@ int main(int argc, char *argv[])
 	mult = j * k;
 	printf("%d\n", mult);
 	}
-	return
+	return (0);
 }
