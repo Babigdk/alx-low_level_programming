@@ -1,1 +1,4 @@
-MALLOCK
+mallock
+callock
+reaclock
+free
