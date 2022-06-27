@@ -4,7 +4,7 @@
 
 /**
  * free_grid - function to free memory
- * @grid: pointer to grid 
+ * @grid: pointer to grid
  * @height: int type
  * Return: void
  */
