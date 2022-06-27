@@ -21,7 +21,7 @@ int _strlen(char *s)
  * @n: int of size
  * Return: coid
  */
-char *_strncat(char *dest, char *src, int m)
+char *_strncat(char *dest, char *src, int n)
 {
 	int dest_len, a;
 	dest_len = _strlen(dest);
