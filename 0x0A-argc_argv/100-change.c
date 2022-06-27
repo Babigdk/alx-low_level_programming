@@ -9,38 +9,25 @@
  */
 int main(int argc, char *argv[])
 {
-	int x = 0; money = 0;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	money = atoi(argv[1]);
-	while (money > 0)
+	else
 	{
-		if (money - 25 >= 0)
+		int cent[5] = {25, 10, 5, 2, 1};
+		int i, count = 0, number = atoi(argv[1]);
+
+		for (i = 0; i < 5; i += 1)
 		{
-			money = money - 25;
+			while (number >= cent[i])
+			{
+				number -= cent[i];
+				count += 1;
+			}
 		}
-		else if (money - 10 >= 0)
-		{
-			money = money - 10;
-		}
-		else if (money - 5 >= 0)
-		{
-			money = money - 5;
-		}
-		else if (money - 2 >= 0)
-		{
-			money = money - 2;
-		}
-		else if (money - 1 == 0)
-		{
-			money = money - 1;
-		}
-		x++;
+	printf("%d\n", count);
 	}
-	printf("%d\n", x);
 	return (0);
 }
