@@ -9,31 +9,20 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int j;
+	int i = 1;
+	int j = 1;
 	int k;
-	int mult = 0;
+	int mult = 1;
 
-	if (argc != 3)
+	if (argc > 2)
 	{
-		printf("Error\n");
+		mult = atoi(argv[i]) * atoi(argv[i + 1]);
+		printf("%d\n", mult);
 		return (0);
 	}
-	else if (argc == 3)
+	else
 	{
-		for (i = o; i < argc; i++)
-		{
-			if (i == 1)
-			{
-				j = atoi(argv[i]);
-			}
-			else if (i == 2)
-			{
-				k = atoi(argv[i]);
-			}
-		}
-	mult = j * k;
-	printf("%d\n", mult);
+		printf("Error\n");
+		return (1);
 	}
-	return (0);
 }
