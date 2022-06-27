@@ -20,7 +20,7 @@ int _strlen(char *s)
 /**
  * *_strdup - creationg new array containing a copy of a given string
  * @str: pointer
- * Retuen: null
+ * Return: null
  */
 char *_strdup(char *str)
 {
