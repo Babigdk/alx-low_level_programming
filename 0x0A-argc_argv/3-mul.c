@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int i = argc - 1, j = i - 1, result;
 
-	if ( i == 2)
+	if (i == 2)
 	{
 		result = atoi(argv[i]) * atoi(argv[j]);
 		printf("%d\n", result);
