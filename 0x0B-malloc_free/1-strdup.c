@@ -18,7 +18,7 @@ int _strlen(char *s)
 }
 
 /**
- * _strdup - creationg new array containing a copy of a given string
+ * *_strdup - creationg new array containing a copy of a given string
  * @str: pointer
  * Retuen: null
  */
