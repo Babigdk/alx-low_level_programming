@@ -2,7 +2,7 @@
 /**
  * main - main function
  * @argc: first
- * #argv: second para
+ * @argv: second para
  *
  * Return: 0
  */
