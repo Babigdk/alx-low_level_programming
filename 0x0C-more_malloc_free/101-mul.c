@@ -1,10 +1,7 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <limits.h>
 /**
- * str_len - finds string len
+ * str_len - finds string length
  * @str: input pointer to string
  * Return: length of string
  */
