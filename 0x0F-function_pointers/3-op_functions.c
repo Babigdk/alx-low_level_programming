@@ -1,57 +1,53 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "3-calc.h"
 /**
- * op_add - addition of a + b
- * @a: input integer a
- * @b: input integer b
- * Return: sum
+ * op_add - 5 functions
+ * @a: input one
+ * @b: input two
+ * Return: 0
  */
 int op_add(int a, int b)
 {
 	return (a + b);
 }
 /**
- * op_sub - subtraction of a - b
- * @a: input integer a
- * @b: input integer b
- * Return: difference
+ * op_sub - 5 functions
+ * @a: input one
+ * @b: input two
+ * Return: 0
  */
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
 /**
- * op_mul - multiplication of a * b
- * @a: input integer a
- * @b: input integer b
- * Return: product
+ * op_mul - 5 functions
+ * @a: input one
+ * @b: input two
+ * Return: 0
  */
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
 /**
- * op_div - division of a / b
- * @a: input integer a
- * @b: input integer b
- * Return: quotient
+ * op_div - 5 functions
+ * @a: input one
+ * @b: input two
+ * Return: 0
  */
 int op_div(int a, int b)
 {
-	if (b != 0)
-		return (a / b);
-	printf("Error\n");
-	exit(100);
+	return (a / b);
 }
 /**
- * op_mod - modulo of a / b
- * @a: input integer a
- * @b: input integer b
- * Return: remainder
+ * op_mod - 5 functions
+ * @a: input one
+ * @b: input two
+ * Return: 0
  */
 int op_mod(int a, int b)
 {
-	if (b != 0)
-		return (a % b);
-	printf("Error\n");
-	exit(100);
+	return (a % b);
 }
