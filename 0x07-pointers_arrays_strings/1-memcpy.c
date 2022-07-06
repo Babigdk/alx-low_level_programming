@@ -1,11 +1,10 @@
-#include "main.h"
+#include "bootcamp.h"
 /**
- * _memcpy - copies memory data
- * @dest: buffer to be copied to
- * @src: buffer to be copy from
- * @n: number of byte to be copy
- *
- * Return: 1
+ * _memcpy - input
+ * @dest: input pointer to string destination
+ * @src: input pointer to source string
+ * @n: number of bytes
+ * Return: pointer to destination string
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
@@ -13,7 +12,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 	while (i < n)
 	{
-		dest[i] = src[i];
+		*(dest + i) = *(src + i);
 		i++;
 	}
 	return (dest);
