@@ -1,57 +1,37 @@
 #include "search_algos.h"
-/**
- * print_array - prints the input array
- * @array: the input array
- * @min: the minimum index number to print
- * @max: the maximum index number to print
- */
-void print_array(int *array, size_t min, size_t max)
-{
-	printf("Searching in array: ");
-	while (min <= max)
-	{
-		printf("%d", array[min]);
-		printf("%s", min++ < max ? ", " : "\n");
-	}
-}
-/**
- * _bs - searches input array recursively for input value using 'binary search'
- * @array: the input array
- * @min: the minimum index of the array
- * @max: the maximum index of the array
- * @value: the value to search for
- *
- * Return: the index of where the found value is or -1 on error
- */
-int _bs(int *array, size_t min, size_t max, int value)
-{
-	size_t mid;
 
-	print_array(array, min, max);
-	mid = min + ((max - min) / 2);
-	if (value == array[mid])
-		return (mid);
-	if (min == max || max == 0)
-		return (-1);
-
-	if (value > array[mid])
-		min = mid + 1;
-	else
-		max = mid;
-	return (_bs(array, min, max, value));
-}
 /**
- * binary_search - searches input array for input value using 'linear search'
- * @array: the input array
- * @size: the size of array
- * @value: the value to search for
- *
- * Return: the index of where the found value is or -1 on error
+ * binary_search - searches for a value in a sorted array of integers
+ * using the binary search algorithm
+ * @array: array of integers
+ * @size: size of array
+ * @value: value to search for
+ * Return: index of value or -1 if not found
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-	if (array && size)
-		return (_bs(array, 0, size - 1, value));
-	else
+
+	size_t i, left, right;
+
+	if (array == NULL)
 		return (-1);
+
+	for (left = 0, right = size - 1; right >= left;)
+	{
+		printf("Searching in array: ");
+		for (i = left; i < right; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+
+		i = left + (right - left) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			right = i - 1;
+		else
+			left = i + 1;
+	}
+
+	return (-1);
 }
