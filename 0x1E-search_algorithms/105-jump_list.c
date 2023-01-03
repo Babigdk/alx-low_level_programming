@@ -1,45 +1,41 @@
 #include "search_algos.h"
 
 /**
- * jump_list - Searches for an algorithm in a sorted singly
- *             linked list of integers using jump search.
- * @list: A pointer to the  head of the linked list to search.
- * @size: The number of nodes in the list.
- * @value: The value to search for.
- *
- * Return: If the value is not present or the head of the list is NULL, NULL.
- *         Otherwise, a pointer to the first node where the value is located.
- *
- * Description: Prints a value every time it is compared in the list.
- *              Uses the square root of the list size as the jump step.
+ * binary_search - function that searches for a value in a sorted array of
+ * integers using the Binary search algorithm
+ * @array: pointer to the first element of the array to search in
+ * @size: number of elements in array
+ * @value:  the value to search for
+ * Return: index where value is located
+ * If value is not present in array or if array is NULL, return -1
  */
-listint_t *jump_list(listint_t *list, size_t size, int value)
+
+int binary_search(int *array, size_t size, int value)
 {
-	size_t step, step_size;
-	listint_t *node, *jump;
+	unsigned int lowerLimit = 0;
+	unsigned int upperLimit = size - 1;
+	unsigned int middle, i;
 
-	if (list == NULL || size == 0)
-		return (NULL);
-
-	step = 0;
-	step_size = sqrt(size);
-	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
+	if (array == NULL)
+		return (-1);
+	while (lowerLimit <= upperLimit)
 	{
-		node = jump;
-		for (step += step_size; jump->index < step; jump = jump->next)
+		printf("Searching in array: ");
+		for (i = lowerLimit; i <= upperLimit; i++)
 		{
-			if (jump->index + 1 == size)
-				break;
+			printf("%d", array[i]);
+			if (i < upperLimit)
+				printf(", ");
+			else
+				printf("\n");
 		}
-		printf("Value checked at index [%ld] = [%d]\n", jump->index, jump->n);
+		middle = (lowerLimit + upperLimit) / 2;
+		if (array[middle] == value)
+			return (middle);
+		if (array[middle] < value)
+			lowerLimit = middle + 1;
+		if (array[middle] > value)
+			upperLimit = middle - 1;
 	}
-
-	printf("Value found between indexes [%ld] and [%ld]\n",
-			node->index, jump->index);
-
-	for (; node->index < jump->index && node->n < value; node = node->next)
-		printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
-	printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
-
-	return (node->n == value ? node : NULL);
+	return (-1);
 }
