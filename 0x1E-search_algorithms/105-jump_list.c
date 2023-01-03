@@ -1,81 +1,51 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
- *  recursive_bsearch - helper function using recursion
+ * jump_list - searches for a value in an array of
+ * integers using the Jump search algorithm
  *
- * @array: ptr to array
- * @size: number of elements in array
- * @value: value at index
- * @index: index of mid prior to recursive call
- *
- * Return: first index where value is, otherwise -1 if no value or array NULL
+ * @list: input list
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
-
-int recursive_bsearch(int *array, size_t size, int value, unsigned int index)
+listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	unsigned int lo = 0;
-	unsigned int hi = size - 1;
-	unsigned int mid;
+	size_t index, k, m;
+	listint_t *prev;
 
-	if (size == 0)
-		return (-1);
+	if (list == NULL || size == 0)
+		return (NULL);
 
-	printf("Searching in array: ");
-	print_array(array, size);
+	m = (size_t)sqrt((double)size);
+	index = 0;
+	k = 0;
 
-	if (lo > hi)
-		return (-1);
-	if (size % 2 == 0)
-		mid = (size / 2) - 1;
-	else
-		mid = size / 2;
-	if (array[mid] == value)
-		return (mid + index);
-	else if (array[mid] > value)
-		return (recursive_bsearch(array, mid, value, index));
-	else if (array[mid] < value)
-		return (recursive_bsearch(array + mid + 1, size - mid - 1,
-					  value, index + mid + 1));
-	return (-2);
-}
+	do {
+		prev = list;
+		k++;
+		index = k * m;
 
-/**
- *  binary_search - searches for value in array ints with Binary search algo
- *
- * @array: ptr to array
- * @size: number of elements in array
- * @value: value at index
- *
- * Return: first index where value is, otherwise -1 if no value or array NULL
- */
+		while (list->next && list->index < index)
+			list = list->next;
 
-int binary_search(int *array, size_t size, int value)
-{
-	unsigned int index = 0;
+		if (list->next == NULL && index != list->index)
+			index = list->index;
 
-	if (!array)
-		return (-1);
+		printf("Value checked at index [%d] = [%d]\n", (int)index, list->n);
 
-	return (recursive_bsearch(array, size, value, index));
-}
+	} while (index < size && list->next && list->n < value);
 
-/**
- * print_array - Prints an array of integers
- *
- * @array: The array to be printed
- * @size: Number of elements in @array
- */
-void print_array(int *array, size_t size)
-{
-	size_t i;
+	printf("Value found between indexes ");
+	printf("[%d] and [%d]\n", (int)prev->index, (int)list->index);
 
-	i = 0;
-	while (array && i < size)
+	for (; prev && prev->index <= list->index; prev = prev->next)
 	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", array[i]);
-		++i;
+		printf("Value checked at index [%d] = [%d]\n", (int)prev->index, prev->n);
+		if (prev->n == value)
+			return (prev);
 	}
-	printf("\n");
+
+	return (NULL);
 }
